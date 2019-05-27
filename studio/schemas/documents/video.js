@@ -60,12 +60,12 @@ export default {
       {
         name: 'tips',
         title: 'Tips',
-        type: 'blockContent'
+        type: 'portableText'
       },
       {
         name: 'body',
         title: 'Body',
-        type: 'blockContent'
+        type: 'portableText'
       }
     ],
   

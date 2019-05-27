@@ -1,6 +1,6 @@
 export default {
     name: 'post',
-    title: 'Post',
+    title: 'Blog Post',
     type: 'document',
     fields: [
       {
@@ -51,7 +51,7 @@ export default {
       {
         name: 'body',
         title: 'Body',
-        type: 'blockContent'
+        type: 'portableText'
       }
     ],
   
