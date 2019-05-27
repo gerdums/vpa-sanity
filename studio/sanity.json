@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "Virtual Pitching Academy"
+    "name": "Virtual Pitching Academy",
+    "basePath": "/dashboard"
   },
   "api": {
     "projectId": "mwchhyh6",
