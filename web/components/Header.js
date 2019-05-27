@@ -71,6 +71,7 @@ class Header extends Component {
     const {showNav} = this.state
 
     return (
+      <div className={styles.headerBar}>
       <div className={styles.root} data-show-nav={showNav}>
         <h1 className={styles.branding}>
           <Link
@@ -113,6 +114,7 @@ class Header extends Component {
             <HamburgerIcon className={styles.hamburgerIcon} />
           </button>
         </nav>
+      </div>
       </div>
     )
   }
