@@ -1,7 +1,10 @@
+import { MdPlayCircleOutline } from 'react-icons/lib/md'
+
 export default {
     name: 'video',
     title: 'Video',
     type: 'document',
+    icon: MdPlayCircleOutline,
     fields: [
       {
         name: 'title',
@@ -18,39 +21,26 @@ export default {
         }
       },
       {
-        name: 'url',
-        title: 'Vimeo URL',
-        type: 'string'
-      },
-      {
         name: 'section',
-        title: 'Section',
+        title: 'Area Selection',
         type: 'reference',
         to: {type: 'section'}
+      },{
+        name: 'video',
+        title: 'Upload Video',
+        type: 'mux.video'
       },
       {
-        name: 'thumbnail',
-        title: 'Thumbnail image',
-        type: 'image',
-        options: {
-          hotspot: true
-        }
+        name: 'access',
+        title: 'Only Ace Members',
+        type: 'boolean',
+        value: false
       },
       {
         name: 'categories',
-        title: 'Categories',
+        title: 'Skill Focus',
         type: 'array',
         of: [{type: 'reference', to: {type: 'category'}}]
-      },
-      {
-        name: 'subCategory',
-        title: 'Sub Category',
-        type: 'string'
-      },
-      {
-        name: 'focus',
-        title: 'Skill Focus',
-        type: 'string'
       },
       {
         name: 'need',
@@ -71,15 +61,7 @@ export default {
   
     preview: {
       select: {
-        title: 'title',
-        author: 'author.name',
-        media: 'mainImage'
-      },
-      prepare(selection) {
-        const {author} = selection
-        return Object.assign({}, selection, {
-          subtitle: author && `by ${author}`
-        })
+        title: 'title'
       }
     }
   }

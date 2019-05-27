@@ -1,5 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdDashboard, MdSettings, MdDescription, MdSupervisorAccount, MdPlaylistAddCheck, MdVideoLibrary, MdFitnessCenter, MdRoomService } from 'react-icons/lib/md'
+import { MdDashboard, MdSettings, MdDescription, MdSupervisorAccount, MdPlaylistAddCheck, MdVideoLibrary, MdFitnessCenter, MdRoomService, MdPlayCircleOutline } from 'react-icons/lib/md'
 
 // We filter document types defined in structure to prevent
 // them from being listed twice
@@ -37,8 +37,8 @@ S.list()
                 .child(
                   S.documentList()
                     .title('The Gym')
-                    .filter('_type == $type && editorialState == $state')
-                    .params({ type: 'video', state: 'review' })
+                    .filter('_type == $type && section == $section.title')
+                    .params({ type: 'video', section: 'The Gym' })
                 ),
               S.listItem()
                 .title('The Mound')
@@ -46,8 +46,8 @@ S.list()
                 .child(
                   S.documentList()
                     .title('The Mound')
-                    .filter('_type == $type && editorialState == $state')
-                    .params({ type: 'video', state: 'review' })
+                    .filter('_type == $type && !defined(parents)')
+                    .params({ type: 'video' })
                 ),
               S.listItem()
                 .title('All Videos')
